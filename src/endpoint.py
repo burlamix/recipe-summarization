@@ -31,7 +31,9 @@ def predict():
     else:
         recipestring = "vodka ; beer ; sugar ; lime ; Stir all ingredients with ice and strain into a big cocktail glass . Add the sugar on the top and serve"
 
-    result = '["John circus","Death beach"]'
+    import random
+    sample_results = ['["John circus","Death beach"]','["Mafia","Paradise Club"]','["Late Cocktail","Island Clover"]','["Imperial furlong too","White Lane"]','["Jelly Marley","Talos Cordial"]']
+    result = random.choice(sample_results)
     try:
         result = str(talk(recipestring))
     except Exception as e:
@@ -60,6 +62,6 @@ def score():
     return json.dumps({'Status':'OK'})
 
 if __name__ == "__main__":
-    serve(app,host='0.0.0.0', port=5001)
+    serve(app,host='0.0.0.0', port=5005)
 
 
