@@ -117,6 +117,9 @@ def keras_rnn_predict(samples, empty, model, batch_size):
     assert all(l[maxlend] == eos for l in samples)
     # pad from right (post) so the first maxlend will be description followed by headline
     data = sequence.pad_sequences(samples, maxlen=maxlen, value=empty, padding='post', truncating='post')
+    
+    print("\n\n\n")
+    print(data)
     probs = model.predict(data, verbose=0, batch_size=batch_size)
     return np.array([prob[sample_length - maxlend - 1]
                      for prob, sample_length in zip(probs, sample_lengths)])

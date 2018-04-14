@@ -16,7 +16,7 @@ from model import create_model
 from sample_gen import gensamples
 
 # set seeds in random libraries
-seed = 1337
+seed = 11
 
 random.seed(seed)
 np.random.seed(seed)
@@ -61,6 +61,7 @@ def load_weights(model, filepath):
 
 
 def main(sample_str=None):
+    print("ssss")
     """Predict a title for a recipe."""
     # load model parameters used for training
     with open(path.join(path_models, 'model_params.json'), 'r') as f:
@@ -101,6 +102,7 @@ def main(sample_str=None):
 
     x = [word2idx[w.rstrip('^')] for w in sample_str.split()]
 
+
     samples,retvals = gensamples(
         skips=5,
         k=1,
@@ -132,3 +134,9 @@ def talk(randomstr):
     return main(randomstr)
 
 
+
+if __name__ == '__main__':     
+     parser = argparse.ArgumentParser()        
+     parser.add_argument('--sample-str', type=str, default=None, help='Sample recipe description')     
+     args = parser.parse_args()        
+     main(sample_str=args.sample_str)

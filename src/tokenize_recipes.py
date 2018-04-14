@@ -35,7 +35,7 @@ def recipe_is_complete(r):
     return True
 
 
-def tokenize_recipes(recipes):          #-------------!!!!!!!!!!!!!!!!!!!! importa point for parsing
+def tokenize_recipes(recipes):          #-------------!!!!!!!!!!!!!!!!!!!! 
     """Tokenise all recipes."""
     tokenized = []
     n = len(recipes)
@@ -45,7 +45,7 @@ def tokenize_recipes(recipes):          #-------------!!!!!!!!!!!!!!!!!!!! impor
             tokenized.append((
                 tokenize_sentence(r['title']),
                 tokenize_sentence(ingredients) + tokenize_sentence(r['instructions'])))
-        if i % 10000 == 0:
+        if i % 1000 == 0:
             print('Tokenized {:,} / {:,} recipes'.format(i, n))
     return tuple(map(list, zip(*tokenized)))
 

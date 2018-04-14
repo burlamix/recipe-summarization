@@ -36,7 +36,7 @@ batch_size = args.batch_size
 validation_size = args.validation_size
 
 # set sample sizes
-#the previus implementation... this in my opinion don't make sense...
+#the previus implementation... 
 nb_train_samples = np.int(np.floor(args.nsamples / batch_size)) * batch_size  # num training samples
 nb_val_samples = nb_train_samples  # num validation samples
 
