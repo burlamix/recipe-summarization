@@ -1,4 +1,5 @@
 from predict import talk
+from predict import clearSession
 
 from flask import Flask, request
 import json
@@ -33,6 +34,7 @@ def predict():
         result = str(talk(recipestring))
     except Exception as e:
         print('ERROR: Printing default values',e)
+        clearSession()
 
     if(result):
         print("PREDICTION:",result)

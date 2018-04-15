@@ -126,6 +126,8 @@ def main(sample_str=None):
     K.clear_session()
     return retvals
 
+def clearSession():
+    K.clear_session()
 
 def talk(randomstr):
     try1 = "vodka ; beer ; sugar ; lime ; Stir all ingredients with ice and strain into a big cocktail glass . Add the sugar on the top and serve"
