@@ -4,7 +4,7 @@ This repo implements a sequence-to-sequence encoder-decoder using Keras to summa
 
 
 ## Data
-I scraped 125,000 recipes from various websites for training (additional details can be found [here](https://github.com/rtlee9/recipe-box)). Each recipe consists of:
+We scraped 500 recipes from various websites for training. Each recipe consists of:
 
 * A Coktails title
 * A list of ingredients
